@@ -1,6 +1,5 @@
 import pandas as pd
 from os import path
-import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
@@ -17,11 +16,8 @@ def linear_regression_analysis():
     # Load the dataset
     df = pd.read_csv(DATA_FILE, low_memory=False)
 
-    # If you are using one-hot encoding for 'TestPrep' column, apply it
-    df_encoded = pd.get_dummies(df, columns=['TestPrep'], drop_first=True)
-
-    # Choose the best feature combination based on the R-squared value (as mentioned earlier)
-    X = df_encoded[['MathScore', 'WritingScore', 'TestPrep_none']]  # Best combination of features
+    # Choose the two features for linear regression (MathScore and WritingScore)
+    X = df[['MathScore', 'WritingScore']]  # Only using MathScore and WritingScore as features
     Y = df['ReadingScore']  # Target variable: ReadingScore
 
     # Split the data into training and testing sets (80% for training, 20% for testing)
@@ -53,7 +49,7 @@ def linear_regression_analysis():
         print("1. Display Analysis (Intercept, Coefficients, Evaluation)")
         print("2. Plot Actual vs Predicted values")
         print("3. Plot Residuals")
-        print("4. Display First 20 Actual vs Predicted values")
+        print("4. Display First 20 Actual vs Predicted values in table format")
         print("5. Exit")
 
         choice = input("Enter the number of your choice: ")
@@ -86,12 +82,18 @@ def linear_regression_analysis():
             plt.show()
 
         elif choice == '4':
-            comparison_df = pd.DataFrame({
-                'Actual ReadingScore': Y_test[:20].values,
-                'Predicted ReadingScore': Y_pred[:20]
+            # Prepare the table output with squared residuals
+            output_table = pd.DataFrame({
+                'MathScore': X_test['MathScore'],
+                'WritingScore': X_test['WritingScore'],
+                'Actual ReadingScore': Y_test.values,
+                'Predicted ReadingScore': Y_pred,
+                'Residual e (Squared)': (Y_test.values - Y_pred) ** 2  # Squared residuals
             })
-            print("\nFirst 20 Actual vs Predicted Scores:")
-            print(comparison_df)
+
+            # Display the first few rows
+            print("\n--- First 20 Actual vs Predicted Scores ---")
+            print(output_table.head(20))
 
         elif choice == '5':
             print("Exiting...")
