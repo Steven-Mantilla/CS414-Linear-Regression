@@ -11,9 +11,13 @@ The following Python libraries are required to run the script:
 - `matplotlib`
 - `scikit-learn`
 
-Install them using the following command:
+# How to Install
+
+Install the required libraries using the following command:
+
 ```bash
 pip install pandas matplotlib scikit-learn
+
 
 ## Dataset Requirements
 - The dataset must have **at least 100 rows**.
