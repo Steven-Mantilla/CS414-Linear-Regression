@@ -37,7 +37,7 @@ The dataset contains information on students' scores across different subjects, 
 - **Visualization**: `matplotlib` is used for plots to help evaluate model performance visually.
 
 
-## Setup and Requirements and  ## How to Run the Analysis
+## Setup and Requirements and   How to Run the Analysis
 
 To start the analysis, run the script. A menu will guide you through various options for data analysis and visualization.
 - **Python 3.x**
@@ -52,7 +52,6 @@ Install dependencies with:
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn
 
-```bash
 python main.py
 
 
