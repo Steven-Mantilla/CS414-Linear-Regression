@@ -1,43 +1,78 @@
 # CS414-Linear-Regression
 
-# Linear Regression for Feature Combination Evaluation
-
-This project uses linear regression to evaluate various feature combinations for predicting students' reading scores. It tests different feature subsets and selects the best combination based on the R-squared metric. The process involves feature selection, one-hot encoding, and evaluation of the model's performance using different feature combinations.
-
-Additionally, the project applies the Linear Regression algorithm on a dataset of at least 100 entries with two features: one feature for the x-axis and another for the y-axis.
-
 ## Project Overview
+This project implements a **Linear Regression** algorithm on a dataset containing at least 100 rows. The dataset includes two features for prediction (e.g., `MathScore` and `WritingScore`) and a target variable (`ReadingScore`). The script performs data preprocessing, scales the features, trains the model, and provides multiple outputs for evaluation, visualization, and analysis. 
 
-- **Objective**: Evaluate different combinations of features to predict reading scores and identify the best set of features for the regression model.
-- **Model**: Linear Regression
-- **Evaluation Metric**: R-squared (R²)
-- **Feature Combinations**: 2-feature and 3-feature combinations
-- **Dataset Size**: At least 100 rows
-- **Features**: At least two features (one for the x-axis and one for the y-axis)
-
-## Features
-
-- **MathScore**: Student's math test score
-- **WritingScore**: Student's writing test score
-- **Gender**: Student's gender
-- **EthnicGroup**: Student's ethnic group
-- **ParentEduc**: Parent's level of education
-- **LunchType**: Type of lunch (standard/reduced)
-- **TestPrep**: Participation in test preparation course
-
-## Data Preprocessing
-
-- **One-hot Encoding**: Categorical features such as `Gender`, `EthnicGroup`, `ParentEduc`, `LunchType`, and `TestPrep` are one-hot encoded to convert them into binary variables.
-- **Feature Combinations**: All possible combinations of 2 or 3 features are evaluated to identify which set of features yields the best performance in predicting the reading scores.
 
 ## Requirements
-
-- Python 3.x
+The following Python libraries are required to run the script:
 - `pandas`
-- `numpy`
-- `sklearn`
+- `os`
+- `matplotlib`
+- `scikit-learn`
+## Dataset Requirements
+- The dataset must have **at least 100 rows**.
+- Required columns in the dataset:
+  - `MathScore`: Feature used on the x-axis.
+  - `WritingScore`: Feature used on the y-axis.
+  - `ReadingScore`: The target variable.
+- Place the dataset in the `Datasets/` folder with the filename `Original_data_with_more_rows.csv`.
 
-You can install the required libraries using pip:
+
+## File Structure
+- **Project Root**:
+  - `Datasets/Original_data_with_more_rows.csv`: Dataset file.
+  - `script_name.py`: Python script implementing linear regression.
+
+---
+# How to Run
+
+1. Place the dataset in the `Datasets/` folder.
+2. Run the script using the following command:
+
+   ```bash
+   python script_name.py
+3. Use the interactive menu to choose outputs:
+   - Display Analysis: Displays intercept, coefficients, Mean Squared Error (MSE), and R-squared values.
+   - Plot Actual vs Predicted Values: Shows a scatter plot of actual vs. predicted values.
+   - Plot Residuals: Displays a residual plot to analyze errors.
+   - Display Actual vs Predicted Values: Outputs a table with the first 20 rows of actual vs. predicted values along with squared residuals.
+   - Exit: Ends the program.
+# Features
+
+- **Linear Regression:**
+  - Predicts "ReadingScore" based on "MathScore" and "WritingScore."
+  - Scales features using StandardScaler.
+
+- **Model Evaluation:**
+  - Displays metrics: Mean Squared Error (MSE) and R-squared values.
+
+- **Visualization:**
+  - Generates scatter plots for actual vs. predicted values.
+  - Displays residual plots to analyze error distributions.
+
+- **Tabular Output:**
+  - Displays a table showing actual vs. predicted scores, along with residuals.
+
+# Example Interaction
+
+Upon running the script, you will see an interactive menu:
+
+Choose an option:
+1. Display Analysis (Intercept, Coefficients, Evaluation)
+2. Plot Actual vs Predicted values
+3. Plot Residuals
+4. Display First 20 Actual vs Predicted values in table format
+5. Exit
+
+
+
+
+# How to Install
+
+Install the required libraries using the following command:
 
 ```bash
-pip install pandas numpy scikit-learn
+pip install pandas matplotlib scikit-learn
+
+
