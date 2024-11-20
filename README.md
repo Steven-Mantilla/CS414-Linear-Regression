@@ -36,21 +36,10 @@ The dataset contains information on students' scores across different subjects, 
 - **Model Evaluation**: Includes Mean Squared Error (MSE), R-squared, and Pearson Correlation Coefficient.
 - **Visualization**: `matplotlib` is used for plots to help evaluate model performance visually.
 
-## Example Usage
-```python
-# Run the analysis function
-linear_regression_analysis()
 
+## Setup and Requirements and  ## How to Run the Analysis
 
-
-## How to Run the Analysis
 To start the analysis, run the script. A menu will guide you through various options for data analysis and visualization.
-
-```bash
-python main.py
-
-
-## Setup and Requirements
 - **Python 3.x**
 - Required libraries:
   - `pandas`
@@ -62,5 +51,8 @@ python main.py
 Install dependencies with:
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn
+
+```bash
+python main.py
 
 
