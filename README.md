@@ -48,7 +48,7 @@ To start the analysis, run the script. A menu will guide you through various opt
   - `matplotlib`
   - `seaborn`
 
-Install dependencies with:
+Install dependencies with and how to run it:
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn
 
