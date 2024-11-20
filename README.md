@@ -1,78 +1,66 @@
 # CS414-Linear-Regression
 
+# Linear Regression Analysis Project
+
+This project performs linear regression analysis on a dataset to predict `ReadingScore` based on `WritingScore`. It includes data preparation, model training, evaluation metrics, and various visualization options to help understand the model's performance.
+
 ## Project Overview
-This project implements a **Linear Regression** algorithm on a dataset containing at least 100 rows. The dataset includes two features for prediction (e.g., `MathScore` and `WritingScore`) and a target variable (`ReadingScore`). The script performs data preprocessing, scales the features, trains the model, and provides multiple outputs for evaluation, visualization, and analysis. 
+This project demonstrates the use of linear regression to predict one variable (`ReadingScore`) based on another (`WritingScore`). The workflow includes:
+1. Preparing the data
+2. Training the linear regression model
+3. Evaluating model performance with various metrics
+4. Generating visualizations for analysis
 
+## Dataset
+The dataset contains information on students' scores across different subjects, with `WritingScore` as the predictor variable and `ReadingScore` as the target variable.
 
-## Requirements
-The following Python libraries are required to run the script:
-- `pandas`
-- `os`
-- `matplotlib`
-- `scikit-learn`
-## Dataset Requirements
-- The dataset must have **at least 100 rows**.
-- Required columns in the dataset:
-  - `MathScore`: Feature used on the x-axis.
-  - `WritingScore`: Feature used on the y-axis.
-  - `ReadingScore`: The target variable.
-- Place the dataset in the `Datasets/` folder with the filename `Original_data_with_more_rows.csv`.
+## Features
+- **Data Preparation**: Cleans and preprocesses the dataset for modeling.
+- **Model Training**: Builds a simple linear regression model.
+- **Evaluation Metrics**: Calculates error metrics to evaluate model accuracy.
+- **Visualizations**: Generates plots to illustrate model performance and fit.
 
+## Project Structure
+- **Project Root**: Contains the main script.
+- **Datasets Directory**: Stores the dataset, `Original_data_with_more_rows.csv`.
 
-## File Structure
-- **Project Root**:
-  - `Datasets/Original_data_with_more_rows.csv`: Dataset file.
-  - `script_name.py`: Python script implementing linear regression.
+## Options Available
+- **Display Analysis**: Shows Mean Squared Error, R-squared, Pearson Correlation, standard deviations, slope, and intercept.
+- **Display First 20 Actual vs Predicted Values**: Displays a table comparing actual and predicted values for the first 20 instances.
+- **Plot Regression Line**: Shows a scatter plot of actual values and the linear regression line.
+- **Plot Actual vs Predicted Values**: Compares actual vs predicted values.
+- **Plot Residuals**: Visualizes residuals to assess model accuracy.
+- **Exit**: Exits the program.
+## Additional Details
+- **Data Scaling**: `StandardScaler` is used to scale the features.
+- **Model Evaluation**: Includes Mean Squared Error (MSE), R-squared, and Pearson Correlation Coefficient.
+- **Visualization**: `matplotlib` is used for plots to help evaluate model performance visually.
 
----
-# How to Run
-
-1. Place the dataset in the `Datasets/` folder.
-2. Run the script using the following command:
-
-   ```bash
-   python script_name.py
-3. Use the interactive menu to choose outputs:
-   - Display Analysis: Displays intercept, coefficients, Mean Squared Error (MSE), and R-squared values.
-   - Plot Actual vs Predicted Values: Shows a scatter plot of actual vs. predicted values.
-   - Plot Residuals: Displays a residual plot to analyze errors.
-   - Display Actual vs Predicted Values: Outputs a table with the first 20 rows of actual vs. predicted values along with squared residuals.
-   - Exit: Ends the program.
-# Features
-
-- **Linear Regression:**
-  - Predicts "ReadingScore" based on "MathScore" and "WritingScore."
-  - Scales features using StandardScaler.
-
-- **Model Evaluation:**
-  - Displays metrics: Mean Squared Error (MSE) and R-squared values.
-
-- **Visualization:**
-  - Generates scatter plots for actual vs. predicted values.
-  - Displays residual plots to analyze error distributions.
-
-- **Tabular Output:**
-  - Displays a table showing actual vs. predicted scores, along with residuals.
-
-# Example Interaction
-
-Upon running the script, you will see an interactive menu:
-
-Choose an option:
-1. Display Analysis (Intercept, Coefficients, Evaluation)
-2. Plot Actual vs Predicted values
-3. Plot Residuals
-4. Display First 20 Actual vs Predicted values in table format
-5. Exit
+## Example Usage
+```python
+# Run the analysis function
+linear_regression_analysis()
 
 
 
-
-# How to Install
-
-Install the required libraries using the following command:
+## How to Run the Analysis
+To start the analysis, run the script. A menu will guide you through various options for data analysis and visualization.
 
 ```bash
-pip install pandas matplotlib scikit-learn
+python main.py
+
+
+## Setup and Requirements
+- **Python 3.x**
+- Required libraries:
+  - `pandas`
+  - `numpy`
+  - `scikit-learn`
+  - `matplotlib`
+  - `seaborn`
+
+Install dependencies with:
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn
 
 
