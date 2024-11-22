@@ -22,7 +22,7 @@ The dataset contains information on students' scores across different subjects, 
 
 ## Project Structure
 - **Project Root**: Contains the main script.
-- **Datasets Directory**: Stores the dataset, `Original_data_with_more_rows.csv`.
+- **Datasets Directory**: Stores the dataset, `Original_data_with_more_rows.csv`,`students_score.csv`.
 
 ## Options Available
 - **Display Analysis**: Shows Mean Squared Error, R-squared, Pearson Correlation, standard deviations, slope, and intercept.
