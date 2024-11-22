@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 # Set paths
 PROJECT_ROOT = path.abspath(path.dirname(path.dirname(__file__)))
 DATA_DIR = path.join(PROJECT_ROOT, "Datasets")
-DATA_FILE = path.join(DATA_DIR, "Original_data_with_more_rows.csv")
+DATA_FILE = path.join(DATA_DIR, "students_score.csv")
 
 # Function to perform linear regression analysis
 def linear_regression_analysis():
@@ -24,10 +24,10 @@ def linear_regression_analysis():
     # Split the data into training and testing sets (80% for training, 20% for testing)
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
 
-    # Feature Scaling
+    # Feature Scaling with preserved column names
     scaler = StandardScaler()
-    X_train_scaled = scaler.fit_transform(X_train)
-    X_test_scaled = scaler.transform(X_test)
+    X_train_scaled = pd.DataFrame(scaler.fit_transform(X_train), columns=X_train.columns)
+    X_test_scaled = pd.DataFrame(scaler.transform(X_test), columns=X_test.columns)
 
     # Create and train the linear regression model
     model = LinearRegression()
@@ -79,13 +79,16 @@ def linear_regression_analysis():
         # Create X_line with WritingScore values from min to max
         X_line = np.linspace(X_test['WritingScore'].min(), X_test['WritingScore'].max(), 100).reshape(-1, 1)
 
+        # Create DataFrame for X_line with correct feature name
+        X_line_df = pd.DataFrame(X_line, columns=['WritingScore'])
+
         # Scale the X_line data (WritingScore)
-        X_line_scaled = scaler.transform(X_line)
+        X_line_scaled = scaler.transform(X_line_df)
 
         # Make predictions using the scaled X_line
         Y_line = model.predict(X_line_scaled)
 
-        # Plot the regression line (Model's predictions)
+        # Plot the regression line
         plt.plot(X_line, Y_line, color='red', label='Regression Line')
         plt.xlabel('WritingScore')
         plt.ylabel('ReadingScore')
